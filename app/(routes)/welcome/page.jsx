@@ -24,7 +24,7 @@ export default function Welcome() {
         <Button size="sm" className={styles.button}>Try it now!</Button>
       </div>
       <div className={styles.projects}>
-        <div className={styles.header}>
+        <div className={styles.heading}>
           <div className={styles.title}>Sample Projects</div>
         </div>
         <motion.div

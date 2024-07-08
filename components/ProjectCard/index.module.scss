@@ -1,0 +1,83 @@
+@use "../../styles/variable" as *;
+@use "../../styles/functions" as *;
+
+$MOBILE_BREAKPOINT: 900px;
+
+.card {
+  flex-direction: row;
+  padding: 5px;
+  width: fit-content;
+  height: 265px;
+  overflow: hidden;
+
+  @media only screen and (max-width: $MOBILE_BREAKPOINT) {
+    flex-direction: column;
+    height: fit-content;
+  }
+}
+
+.image {
+  max-width: 350px;
+
+  @media only screen and (max-width: $MOBILE_BREAKPOINT) {
+    max-width: 320px;
+  }
+}
+
+.wrapper {
+  flex-direction: row;
+  align-items: center;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+
+  @media only screen and (max-width: $MOBILE_BREAKPOINT) {
+    flex-direction: column;
+    padding-bottom: 0;
+  }
+}
+
+.innerWrap {
+  padding-left: 1.25rem;
+  gap: 0;
+
+  @media only screen and (max-width: $MOBILE_BREAKPOINT) {
+    padding-left: 0;
+  }
+}
+
+.details {
+  flex-direction: row;
+  align-items: center;
+  gap: 1.25rem;
+
+  @media only screen and (max-width: $MOBILE_BREAKPOINT) {
+    flex-direction: column;
+  }
+}
+
+.texts {
+  text-align: left;
+
+  @media only screen and (max-width: $MOBILE_BREAKPOINT) {
+    text-align: center;
+  }
+}
+
+.icon {
+  &X {
+    display: block;
+    padding: 0;
+    width: fit-content;
+    @media only screen and (max-width: $MOBILE_BREAKPOINT) {
+      display: none;
+    }
+  }
+
+  &Y {
+    display: none;
+    padding: 0;
+    @media only screen and (max-width: $MOBILE_BREAKPOINT) {
+      display: block;
+    }
+  }
+}

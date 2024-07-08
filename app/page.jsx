@@ -1,4 +1,4 @@
-'use client';;
+'use client';
 import LoadingScreen from '@/components/Loading';
 import { useRouter } from 'next/navigation';
 

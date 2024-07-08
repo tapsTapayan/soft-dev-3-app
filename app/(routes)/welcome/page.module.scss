@@ -36,6 +36,8 @@ $MOBILE_SMALL_BREAKPOINT: 400px;
 
 .projects {
   min-height: 100vh;
+  gap: 5rem;
+  padding-bottom: 5rem;
 }
 
 .header {
@@ -136,4 +138,13 @@ $MOBILE_SMALL_BREAKPOINT: 400px;
     box-shadow: 0.5px 0.5px 0.5px $COLOR_BLUE_500;
     transition: all 200ms ease-in-out;
   }
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 1600px;
 }

@@ -1,5 +1,8 @@
+'use client'
 import { Button, Image } from "@chakra-ui/react";
+import { motion } from 'framer-motion';
 import styles from "./page.module.scss";
+import ProjectCard from "@/components/ProjectCard";
 
 export default function Welcome() {
   return (
@@ -24,6 +27,18 @@ export default function Welcome() {
         <div className={styles.header}>
           <div className={styles.title}>Sample Projects</div>
         </div>
+        <motion.div
+          className={styles.content}
+          animate={{ height: "fit-content" }}
+          transition={{ ease: "linear", duration: 0.3 }}
+        >
+          <ProjectCard/>
+          <ProjectCard/>
+          <ProjectCard/>
+          <ProjectCard/>
+          <ProjectCard/>
+          <ProjectCard/>
+        </motion.div>
       </div>
     </div>
   );

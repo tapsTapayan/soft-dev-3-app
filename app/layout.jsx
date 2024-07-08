@@ -4,7 +4,6 @@ import { Montserrat } from 'next/font/google';
 
 import { AuthProvider } from '@/providers/AuthContext';
 import { ThemeProvider } from '@/providers/ThemeProvider';
-import { MantineProvider } from '@mantine/core';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -12,7 +11,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: 'Software Development 3 Labs',
+  title: 'SoftDev 3 Labs',
   description: 'Create your own portfolio!',
 };
 
@@ -23,11 +22,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={montserrat.className}>
         <ThemeProvider>
-          <MantineProvider>
-            <AuthProvider>
-              {children}
-            </AuthProvider>
-          </MantineProvider>
+          <AuthProvider>
+            {children}
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>

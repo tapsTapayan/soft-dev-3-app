@@ -1,0 +1,15 @@
+@use "../../styles/variable" as *;
+@use "../../styles/functions" as *;
+
+.footer {
+  display: flex;
+  @include SET_BACKGROUND($COLOR_WHITE, 0.9);
+  border-top: 1px solid #e2e8f0;
+  height: 4rem;
+  width: 100vw;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: $COLOR_BLACK;
+}

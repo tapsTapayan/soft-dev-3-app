@@ -1,0 +1,112 @@
+@use "../../styles/variable" as *;
+@use "../../styles/functions" as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.header,
+.transparent {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  padding-inline: 30px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
+}
+
+.transparent {
+  background: transparent;
+  border-bottom: 1px solid #e2e8f060;
+  transition: all 300ms ease;
+}
+
+.header {
+  @include SET_BACKGROUND($COLOR_WHITE, 0.9);
+  border-bottom: 1px solid #e2e8f0;
+  transition: all 300ms ease;
+}
+
+.simple {
+  display: flex;
+  align-items: center;
+  height: 92px;
+  width: 100%;
+  max-width: 1600px;
+  @media only screen and (max-width: 900px) {
+    flex-direction: column;
+    height: fit-content;
+    padding-block: 1.5rem;
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 92px;
+  width: 100%;
+  max-width: 1600px;
+  @media only screen and (max-width: 900px) {
+    flex-direction: column;
+    height: fit-content;
+    padding-block: 1.5rem;
+    gap: 1.5rem;
+  }
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: fit-content;
+  gap: 5vw;
+  @media only screen and (max-width: 900px) {
+    & > * {
+      scale: 0.8;
+    }
+  }
+}
+
+.links {
+  &:hover {
+    color: $COLOR_BLUE_400;
+    text-shadow: 0.5px 0.5px 0.5px $COLOR_BLUE_500;
+    transition: all 200ms ease-in-out;
+  }
+}
+
+.button {
+  color: $COLOR_WHITE;
+  @include SET_BACKGROUND($COLOR_BLUE_400, 1);
+  transition: all 200ms ease-in-out;
+  &:hover {
+    @include SET_BACKGROUND($COLOR_BLUE_300, 1);
+    box-shadow: 0.5px 0.5px 0.5px $COLOR_BLUE_500;
+    transition: all 200ms ease-in-out;
+  }
+}
+
+.logo {
+  height: 52px;
+  position: relative;
+  aspect-ratio: 5.0962;
+  @media only screen and (max-width: 900px) {
+    height: 35px;
+  }
+}
+
+.profile {
+  @media only screen and (max-width: 900px) {
+    display: none;
+  }
+}

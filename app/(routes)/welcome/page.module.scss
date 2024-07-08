@@ -1,0 +1,139 @@
+@use "../../../styles/variable" as *;
+@use "../../../styles/functions" as *;
+
+$LANDING_BACKGROUND_COLOR: #ebfaff;
+$MOBILE_BREAKPOINT: 700px;
+$MOBILE_SMALL_BREAKPOINT: 400px;
+
+.main {
+  width: 100vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @include SET_BACKGROUND($LANDING_BACKGROUND_COLOR, 1);
+}
+
+.frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.feature,
+.projects {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10rem;
+  padding-bottom: 3rem;
+  width: 100%;
+}
+
+.projects {
+  min-height: 100vh;
+}
+
+.header {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: $COLOR_BLACK;
+  padding-inline: 3rem;
+  gap: 1rem;
+  width: 100%;
+  @media only screen and (max-width: $MOBILE_BREAKPOINT) {
+    text-align: left;
+    align-items: flex-start;
+  }
+}
+
+.backdrop {
+  img {
+    max-height: 40rem;
+    max-width: 40rem;
+    min-height: 25rem;
+    min-width: 25rem;
+    height: 75vmin;
+    width: 75vmin;
+    @media only screen and (max-height: $MOBILE_BREAKPOINT) {
+      min-height: 20rem;
+      min-width: 20rem;
+    }
+  }
+}
+
+.title {
+  font-weight: 700;
+  font-size: 3rem;
+  max-width: 80vw;
+  word-wrap: normal;
+  @media only screen and (max-width: $MOBILE_SMALL_BREAKPOINT) {
+    font-size: 2.6rem;
+  }
+}
+
+.subtitle {
+  font-weight: 400;
+  font-size: 1rem;
+  max-width: 80vw;
+  word-wrap: normal;
+}
+
+.banner {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  padding-block: 5rem;
+  border-start-start-radius: 50px;
+  border-start-end-radius: 50px;
+
+  @include SET_BACKGROUND($COLOR_BLUE_400, 1);
+}
+
+.bannerText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 1.25rem;
+}
+
+.bannerTitle {
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 2rem;
+  color: $COLOR_WHITE;
+}
+
+.bannerSubtitle {
+  width: 100%;
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: $COLOR_WHITE;
+}
+
+.button {
+  color: $COLOR_WHITE;
+  width: fit-content;
+
+  @include SET_BACKGROUND($COLOR_BLUE_300, 1);
+  transition: all 200ms ease-in-out;
+  &:hover {
+    @include SET_BACKGROUND($COLOR_BLUE_200, 1);
+    box-shadow: 0.5px 0.5px 0.5px $COLOR_BLUE_500;
+    transition: all 200ms ease-in-out;
+  }
+}

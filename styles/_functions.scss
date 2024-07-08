@@ -1,0 +1,7 @@
+@mixin SET_BACKGROUND($color, $alpha) {
+  background-color: rgba($color, $alpha);
+}
+
+@mixin SET_COLOR($color, $alpha) {
+  color: rgba($color, $alpha);
+}

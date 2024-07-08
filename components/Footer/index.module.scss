@@ -1,6 +1,8 @@
 @use "../../styles/variable" as *;
 @use "../../styles/functions" as *;
 
+$MOBILE_BREAKPOINT: 700px;
+
 .footer {
   display: flex;
   @include SET_BACKGROUND($COLOR_WHITE, 0.9);
@@ -12,4 +14,9 @@
   font-size: 0.8rem;
   font-weight: 600;
   color: $COLOR_BLACK;
+
+  @media only screen and (max-width: $MOBILE_BREAKPOINT) {
+    flex-direction: column;
+    height: 6rem;
+  }
 }

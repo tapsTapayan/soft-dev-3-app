@@ -33,10 +33,11 @@ import { useAccountsContext } from '@/providers/AccountsProvider';
 import { userCollection } from '@/constants/Firebase.constants';
 import { db } from '@/firebase/config';
 import styles from './index.module.scss';
+import { useRouter } from 'next/navigation';
 
 function RegisterCard() {
   const toast = useToast();
-
+  const router = useRouter();
   const { accountsData } = useAccountsContext();
 
   const [status1, setStatus1] = useState(true);
@@ -58,7 +59,7 @@ function RegisterCard() {
     setShow(false);
     setImage(undefined);
     setImageToUpload(undefined);
-    onClose();
+    router.push('/sign-in');
   };
 
   async function saveUserToDB(uid, userData) {

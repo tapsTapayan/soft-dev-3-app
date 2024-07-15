@@ -10,7 +10,7 @@ function SignIn() {
       <Image
         w="30vw"
         className={styles.backdrop}
-        src="/backdrop_2.png"
+        src="/backdrop_3.png"
         alt="backdrop image"
       />
     </div>

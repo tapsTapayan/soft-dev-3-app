@@ -152,7 +152,7 @@ function AuthCard() {
                 color="#0582CA"
                 onClick={() => router.push('/register')}
               >
-                Don't have an account yet?
+                Don&apos;t have an account yet?
               </Button>
             </Stack>
           </FormControl>

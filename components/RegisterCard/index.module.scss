@@ -1,0 +1,33 @@
+@use "../../styles/variable" as *;
+
+$MOBILE_BREAKPOINT: 700px;
+
+.uploadLabel {
+  background: $COLOR_BLUE_400;
+  color: $COLOR_WHITE;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+
+  &:hover {
+    background: $COLOR_BLUE_300;
+  }
+}
+
+.formLabel {
+  font-size: 0.8rem;
+  color: $COLOR_BLUE_500;
+}
+
+.content {
+  padding-top: 0;
+  padding-inline: 2rem;
+  max-height: 50vh;
+  overflow-y: auto;
+
+  @media only screen and (max-width: $MOBILE_BREAKPOINT) {
+    max-height: 100%;
+  }
+}

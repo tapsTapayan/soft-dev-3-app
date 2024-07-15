@@ -47,7 +47,7 @@ const LandingHeader = ({scrollY}) => {
         <div className={styles.navigation}>
           <Link href={"about-us"} className={styles.links} onClick={()=>{}}>Our Team</Link>
           <Link href={"contact-us"} className={styles.links} onClick={()=>{}}>Contact Us</Link>
-          <Button className={styles.button} onClick={()=>router.push("/sign-up")}>Sign-up</Button>
+          <Button className={styles.button} onClick={()=>router.push("/register")}>Sign-up</Button>
         </div>
       </div>
     </div>

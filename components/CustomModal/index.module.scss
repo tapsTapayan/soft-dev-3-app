@@ -1,0 +1,20 @@
+@use "../../styles/variable" as *;
+
+.uploadLabel {
+  background: $COLOR_BLUE_400;
+  color: $COLOR_WHITE;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+
+  &:hover {
+    background: $COLOR_BLUE_300;
+  }
+}
+
+.formLabel {
+  font-size: 0.8rem;
+  color: $COLOR_BLUE_500;
+}

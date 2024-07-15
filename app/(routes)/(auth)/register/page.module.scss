@@ -1,0 +1,28 @@
+@use "../../../../styles/variable" as *;
+
+$MOBILE_BREAKPOINT: 700px;
+$BREAKPOINT: 1200px;
+
+.frame {
+  padding-top: 100px;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  max-width: 1800px;
+  min-height: 100%;
+
+  @media only screen and (min-width: $MOBILE_BREAKPOINT) {
+    padding-bottom: 0;
+    min-height: calc(100vh - 4rem);
+    max-height: 100vh;
+  }
+}
+
+.backdrop {
+  @media only screen and (max-width: $BREAKPOINT) {
+    display: none;
+  }
+}

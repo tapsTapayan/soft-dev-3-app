@@ -14,7 +14,7 @@ export default function AuthLayout({ children }) {
   useEffect(() => {
     if (user && userDetails && !loading)
       router.push(`/${userDetails?.username}`);
-  }, [user, loading]);
+  }, [user, userDetails, loading]);
   return loading ? (
     <LoadingScreen />
   ) : (

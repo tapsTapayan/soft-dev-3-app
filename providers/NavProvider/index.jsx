@@ -7,6 +7,7 @@ import { useAuthContext } from '../AuthContext';
 export const NavContext = React.createContext({
   active: '',
   title: '',
+  root: '',
   subPath: '',
 });
 

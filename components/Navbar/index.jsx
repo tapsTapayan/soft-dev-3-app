@@ -1,6 +1,6 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { IoLogOutSharp } from 'react-icons/io5';
 
 import { logout } from '@/firebase/auth';
@@ -14,13 +14,9 @@ function Navbar() {
   const router = useRouter();
   const toast = useToast();
   const { userDetails } = useAuthContext();
-  const { active } = useNavContext();
+  const { active } = useNavContext(false);
   const [loading, setLoading] = useState(false);
   const [isLogging, setIsLogging] = useState(false);
-
-  useEffect(() => {
-    setLoading(false);
-  }, [active]);
 
   const handleRedirect = (link, router) => {
     setLoading(true);
@@ -65,10 +61,12 @@ function Navbar() {
             isDisabled={isLogging || loading}
             variant="ghost"
             borderRadius={0}
-            onClick={() =>
-              handleRedirect(`/${userDetails.username}/timesheets`, router)
+            onClick={
+              !active
+                ? () => {}
+                : () => handleRedirect(`/${userDetails.username}`, router)
             }
-            className={active == '' ? styles.active : styles.inactive}
+            className={!active ? styles.active : styles.inactive}
           >
             Home
           </Button>
@@ -76,8 +74,11 @@ function Navbar() {
             isDisabled={isLogging || loading}
             variant="ghost"
             borderRadius={0}
-            onClick={() =>
-              handleRedirect(`/${userDetails.username}/reports`, router)
+            onClick={
+              active == 'designs'
+                ? () => {}
+                : () =>
+                    handleRedirect(`/${userDetails.username}/designs`, router)
             }
             className={active == 'projects' ? styles.active : styles.inactive}
           >
@@ -87,8 +88,11 @@ function Navbar() {
             isDisabled={isLogging || loading}
             variant="ghost"
             borderRadius={0}
-            onClick={() =>
-              handleRedirect(`/${userDetails.username}/payroll`, router)
+            onClick={
+              active == 'projects'
+                ? () => {}
+                : () =>
+                    handleRedirect(`/${userDetails.username}/projects`, router)
             }
             className={active == 'payroll' ? styles.active : styles.inactive}
           >
@@ -100,8 +104,10 @@ function Navbar() {
         isDisabled={isLogging || loading}
         variant="ghost"
         borderRadius={0}
-        onClick={() =>
-          handleRedirect(`/${userDetails.username}/profile`, router)
+        onClick={
+          active == 'profile'
+            ? () => {}
+            : () => handleRedirect(`/${userDetails.username}/profile`, router)
         }
         className={active == 'profile' ? styles.active : styles.inactive}
       >

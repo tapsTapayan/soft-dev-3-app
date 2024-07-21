@@ -31,15 +31,12 @@ import {
 import { FaUserCircle } from 'react-icons/fa';
 import { GenderEnum, UserDataEnum } from '@/enums/userData.enum';
 import { createNewUser, uploadImageToStorage } from '@/firebase/functions';
-import { useAccountsContext } from '@/providers/AccountsProvider';
 import { userCollection } from '@/constants/Firebase.constants';
 import { db } from '@/firebase/config';
 import styles from './index.module.scss';
 
 const Register = ({ onClose }) => {
   const toast = useToast();
-
-  const { accountsData } = useAccountsContext();
 
   const [status1, setStatus1] = useState(true);
   const [status2, setStatus2] = useState(true);

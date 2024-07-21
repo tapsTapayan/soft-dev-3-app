@@ -4,8 +4,8 @@ import { Montserrat } from 'next/font/google';
 
 import { AuthProvider } from '@/providers/AuthContext';
 import { ThemeProvider } from '@/providers/ThemeProvider';
-import { AccountsProvider } from '@/providers/AccountsProvider';
 import { UsernameProvider } from '@/providers/UsernamesProvider';
+import { NavProvider } from '@/providers/NavProvider';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -23,9 +23,9 @@ export default function RootLayout({ children }) {
       <body className={montserrat.className}>
         <ThemeProvider>
           <AuthProvider>
-            <AccountsProvider>
-              <UsernameProvider>{children}</UsernameProvider>
-            </AccountsProvider>
+            <UsernameProvider>
+              <NavProvider>{children}</NavProvider>
+            </UsernameProvider>
           </AuthProvider>
         </ThemeProvider>
       </body>

@@ -7,19 +7,19 @@ import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import LoadingScreen from '@/components/Loading';
 
-export default function LandingLayout({ children }) {
+export default function AuthLayout({ children }) {
   const { user, userDetails, loading } = useAuthContext();
   const router = useRouter();
 
   useEffect(() => {
     if (user && userDetails && !loading)
       router.push(`/${userDetails?.username}`);
-  }, [user, userDetails, loading]);
+  }, [user, loading]);
   return loading ? (
     <LoadingScreen />
   ) : (
     <div className={styles.main}>
-      <Header type="landing" />
+      <Header />
       {children}
       <Footer />
     </div>

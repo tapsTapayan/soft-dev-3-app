@@ -31,7 +31,9 @@
     "utils/encryption.ts",
     "providers/AccountsProvider/index.jsx",
     "providers/UsernamesProvider/index.jsx",
-    "components/AuthCard/index.jsx"
+    "components/AuthCard/index.jsx",
+    "components/Navbar/index.jsx",
+    "providers/NavProvider/index.jsx"
   ],
   "exclude": ["node_modules"]
 }

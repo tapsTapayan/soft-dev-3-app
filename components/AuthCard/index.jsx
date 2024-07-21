@@ -76,7 +76,6 @@ function AuthCard() {
             position: 'top',
             duration: 3000,
           });
-          router.push(`/home/${doc.at(0)?.username}`);
         }
       } catch (e) {
         toast({
